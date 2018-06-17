@@ -103,6 +103,7 @@ register bool virt;
 
 #include <signal.h>
 #include <sys/time.h>
+#include <unistd.h>
 
 typedef struct timeval timeval;
 

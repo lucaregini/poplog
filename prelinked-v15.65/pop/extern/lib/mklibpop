@@ -52,7 +52,8 @@ case `uname -s -r` in
 
 	Linux*)
 		# Linux
-          CC_FLAGS="-D_GNU_SOURCE -m32"
+          CC_FLAGS="-DUNIX  -m32"
+          POP_X_INCLUDE="."
 		;;
 
 	ULTRIX*|IRIX*)
