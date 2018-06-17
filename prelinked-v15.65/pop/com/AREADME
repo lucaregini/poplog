@@ -1,0 +1,9 @@
+NOTE: 4 May 2012
+A.Sloman
+get_archive_args now altered to use -m32 so that mkXpw can be run to
+build 32 bit Poplog on 64 bit linux. See also changes in
+$usepop/pop/src/syscomp
+
+NOTE: 10 Sep 2007
+A.Sloman
+popenv, and popenv.sh no longer set $poplib

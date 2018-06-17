@@ -1,0 +1,15 @@
+#!/bin/sh
+## $usepop/pop/packages/com/startup/simagent-demo
+## run this after setting up poplog environment variables
+## Run pop11
+
+pop11 <<END
+
+uses newkit
+
+load $usepop/pop/packages/newkit/sim/teach/sim_feelings
+
+30 -> sim_delay;
+run_simulation(sim_setup_info, 30000000000, []);
+
+END

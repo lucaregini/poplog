@@ -1,0 +1,20 @@
+#!/bin/sh
+##
+## $local/com/LINK_BHAM_NOMOTIF_POPLOG
+## http://www.cs.bham.ac.uk/research/poplog/com/LINK_BHAM_NOMOTIF_POPLOG
+## Also in $usepop/INSTALL/LINK_BHAM_NOMOTIF_POPLOG
+## Relink poplog and then rebuild saved images, without motif.
+## Use bham version of mkstartup
+##
+## Aaron Sloman (http://www.cs.bham.ac.uk/~axs/)
+## 11 Feb 2015
+
+echo "Starting USERLINK_BHAM_NOMOTIF_POPLOG"
+
+echo "Running LINK_NOMOTIF_POPLOG"
+
+./LINK_LIKE_BHAM
+
+echo "now running ./LINK_NOMOTIF_POPLOG"
+
+./LINK_NOMOTIF_POPLOG

@@ -1,0 +1,47 @@
+total 24252
+-rw-r--r--  1 axs staff     500 Dec 18  1990 init
+-rw-r--r--  1 axs staff     517 Dec 18  1990 vedinit
+-rw-r--r--  1 axs staff     814 Jan 16  1991 poplogin
+-rwxr-xr-x  1 axs staff    1477 Dec 25  2007 pgcomp
+-rwxr-xr-x  1 axs staff    1395 Dec 25  2007 pglibr
+-rwxr-xr-x  1 axs staff   11049 Dec 25  2007 pglink
+-rwxr-xr-x  1 axs staff     316 Feb  4  2008 popsetarch
+-rw-r--r--  1 axs staff      91 Nov  6  2008 copybasepop11
+-rw-r--r--  1 axs staff     647 Aug 14  2010 popenv.sh
+-rw-r--r--  1 axs staff     538 Aug 14  2010 popenv
+-rw-r--r--  1 axs staff      26 Oct 31  2011 init.p
+-rw-r--r--  1 axs staff    3769 Nov  9  2011 AREADME.txt
+-rw-r--r--  1 axs staff       0 May  4  2012 basepop11.stb
+-rwxr-xr-x  1 axs staff     452 May 15  2012 poplink_cmnd.motif.sh
+-rwxr-xr-x  1 axs staff     436 Oct 20  2014 poplink_cmnd.nomotif.sh
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 xved
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 ved
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 teach
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 ref
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 prolog
+-rw-r--r--  1 axs staff     720 Feb 11  2015 poplink_dat.o
+-rwxr-xr-x  1 axs staff     452 Feb 11  2015 poplink_cmnd
+-rw-r--r--  1 axs staff     664 Feb 11  2015 poplink_4.o
+-rw-r--r--  1 axs staff  369088 Feb 11  2015 poplink_3.o
+-rw-r--r--  1 axs staff    6756 Feb 11  2015 poplink_2.o
+-rw-r--r--  1 axs staff   28404 Feb 11  2015 poplink_1.o
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 pop11
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 pml
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 im
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 help
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 doc
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 clisp
+-rw-r--r--  1 axs staff  252060 Feb 11  2015 basepop11.map
+-rwxr-xr-x 12 axs staff 1809936 Feb 11  2015 basepop11
+-rw-r--r--  1 axs staff       0 Feb 11  2015 AS-build-on-Scientific-Linux-release-6.6-2.6.32-504.3.3.el6.x86_64
+-rw-r--r--  1 axs staff       0 Feb 11  2015 AS-re-packaged-2015-02-11
+-rwxr-xr-x  1 axs staff 1304719 Feb 11  2015 corepop
+-rw-r--r--  1 axs staff       0 Feb 11  2015 AS-corepop-built-on-CentOS-5.7-2.6.18-400.1.1.el5-2015-02-11
+-rw-r--r--  1 axs staff  134208 Feb 11  2015 poplibr.psv
+-rw-r--r--  1 axs staff  478272 Feb 11  2015 popc.psv
+-rw-r--r--  1 axs staff  199744 Feb 11  2015 poplink.psv
+-rw-r--r--  1 axs staff  113460 Feb 11  2015 newpop.psv
+lrwxrwxrwx  1 axs staff       7 Dec 10 03:27 corepop11 -> corepop
+lrwxrwxrwx  1 axs staff       7 Dec 10 03:27 popc -> corepop
+lrwxrwxrwx  1 axs staff       7 Dec 10 03:27 poplibr -> corepop
+lrwxrwxrwx  1 axs staff       7 Dec 10 03:27 poplink -> corepop

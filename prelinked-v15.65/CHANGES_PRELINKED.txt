@@ -1,0 +1,28 @@
+$usepop/CHANGES-PRELINKED.txt
+
+This is an experimental new version of Poplog, based on Poplog v15.65, available
+at
+    http://www.cs.bham.ac.uk/research/projects/poplog/latest-poplog
+
+but designed not to be re-linked when installed because at present re-linking
+32bit poplog does not work in 64-bit Linux whereas use of a pre-linked 32-bit
+poplog does work.
+
+The details of this version will later be described more fully here.
+
+Basically it should function exactly like Poplog v15.65, and the Poplog
+variable popversion has not been changed yet.
+
+The only easily detectable difference will be that
+    /usr/local/poplog/current-poplog
+
+is linked to
+    /usr/local/poplog/prelinked-v15.65
+
+I may later arrange for a global Pop11 variable pop_prelinked to be set.
+
+WATCH THIS SPACE!
+
+--- $usepop/CHANGES_PRELINKED.txt
+--- Author: Aaron Sloman
+--- Date: 10 Oct 2015

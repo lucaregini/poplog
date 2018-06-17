@@ -1,0 +1,228 @@
+#!/bin/bash
+##
+## $usepop/INSTALL/LINK_WITHOUT_NEWPOP
+### 10 Oct 2015
+### Problems linking in latest Ubuntu or Fedora (e.g. fedora 22)
+### So this has been changed not to try re-linking. Just use
+### previously saved executable
+### For now assume X11 + motif is always required.
+
+### Users who wish to leave them out will have to learn how to do it.
+
+###
+## 3 Apr 2007
+## Much revised for Version 15.6a
+## Aaron Sloman
+# 17 Jan 2005
+#
+#   Assumes $usepop and other variables already set.
+#   Link poplog using 'newpop'. Determines arguments for
+#   newpop as follows.
+#
+##  NB THE OPTIONAL ARGUMENT IS NOW IGNORED
+#   This script can be run using one optional argument which
+#   should be 'motif' or 'nomotif'. If no argument is provided
+#   it defaults to 'motif'. So the formats are
+#
+#       ./INSTALL/LINK_USING_NEWPOP
+#       ./INSTALL/LINK_USING_NEWPOP motif
+#       ./INSTALL/LINK_USING_NEWPOP nomotif
+#
+
+echo "Starting LINK_WITHOUT_NEWPOP"
+
+if ( grep -i ubuntu  /proc/version > /dev/null ) ;
+then
+    version="ubuntu"
+    echo 'Running Ubuntu'
+elif ( grep -i fedora  /proc/version > /dev/null );
+then
+    version="fedora"
+    echo 'Running Fedora'
+fi
+
+### set $arg to $1, or motif if no $1
+### now it is always motif
+
+arg=${1:-motif}
+
+if [ $arg == "motif" ] ;
+then
+
+    args="-link -x=-xm -norsv"
+    echo "relinking with motif"
+
+elif
+
+    [ $arg == "nomotif" ] ;
+
+then
+
+    echo "ERROR 'nomotif' OPTION NOT SUPPORTED NOW"
+    exit  1
+
+    args="-link -x=-xt -norsv"
+    echo "relinking without motif"
+
+elif [ $arg == "nox" ] ;
+
+then
+
+    echo "ERROR 'nox' OPTION NOT SUPPORTED NOW"
+    exit 1
+
+    args="-nox"
+    echo "relinking without X"
+
+else
+
+    echo $arg  "is not an acceptable argument for LINK_USING_NEWPOP"
+    exit 1
+
+fi
+
+echo "Doing initial setup before newpop"
+
+echo ""
+echo "NOT Relinking and rebuilding poplog images"
+
+echo "Set environment variables"
+
+. $usepop/pop/com/poplog.sh
+
+popsrc=$usepop/pop/src
+popsys=$usepop/pop/pop
+export popsrc popsys
+
+cd $popsys
+
+if [ $arg == "motif" ] ;
+then
+
+    echo "Installing with motif"
+    echo ""
+
+    if [ "$version" == "ubuntu" -o "$version" == "fedora" ] ;
+
+    then
+        echo "Relink in Ubuntu or Fedora"
+        echo ""
+        #try to build system images ready for motif
+
+        echo "Not trying to run $popsys/poplink_cmnd"
+        echo ""
+
+    else
+
+        echo "Need some othr way to link perhaps?"
+
+    fi
+
+
+else
+    echo "INAPPROPRIATE ARGUMENT FOR 'LINK_USING_NEWPOP'"
+fi
+
+echo ""
+
+
+
+echo "BUILDING STANDARD SAVED IMAGES TO GO IN $popsavelib"
+
+if [ "$version" == "ubuntu" -o "$version" == "fedora" ] ;
+
+then
+    echo "In $version - using old basepop11"
+
+    echo "Try using old basepop11 with $popcom/mkstartup"
+    $usepop/pop/com/mkstartup
+
+    ls -l $usepop/pop/lib/psv
+
+    echo ""
+    echo "Creating more saved images"
+    echo ""
+
+    cat /dev/null > install.log
+
+    echo " $usepop/pop/com/makeimages"
+    $usepop/pop/com/makeimages >> install.log
+
+    echo ""
+    echo "-------------------------" >> install.log
+
+
+    ls -l $popsavelib
+
+    echo "$usepop/pop/com/mkxved"
+    echo "$usepop/pop/com/mkxved" >> install.log
+    $usepop/pop/com/mkxved
+    echo ""
+    echo "-------------------------" >> install.log
+
+    ls -l $popsavelib
+
+    ### TWO TOY DEMOS
+    echo "$usepop/pop/com/mkeliza"
+    echo "$usepop/pop/com/mkeliza" >> install.log
+    $usepop/pop/com/mkeliza        >> install.log
+    echo "-------------------------" >> install.log
+    echo ""
+
+    echo "$usepop/pop/com/mkgblocks"
+    echo "$usepop/pop/com/mkgblocks" >> install.log
+    $usepop/pop/com/mkgblocks        >> install.log
+    echo "-------------------------" >> install.log
+    echo ""
+
+    echo "These are the saved images"
+    echo "These are the saved images" >> install.log
+    ls -l $usepop/pop/lib/psv
+    ls -l $usepop/pop/lib/psv >> install.log
+
+    echo "" >> install.log
+    echo "-------------------------" >> install.log
+    echo "" >> install.log
+    echo "Creating Indexes"
+    echo "Creating Indexes" >> install.log
+    $usepop/pop/com/makeindexes >> install.log
+
+    echo "" >> install.log
+    echo "-------------------------" >> install.log
+    echo "" >> install.log
+    echo "Indexes made, finished" >> install.log
+    echo "INDEXES MADE, FINISHED"
+    exit
+
+else
+    echo ""
+    echo "should not be here in LINK_WITHOUT_NEWPOP!"
+    echo ""
+
+fi
+
+
+echo ""
+echo "Standard images made in popsavelib are:"
+echo ""
+
+ls -l $usepop/pop/lib/psv
+
+if [ -f $usepop/pop/lib/psv/startup.psv ]
+then
+    echo "Startup saved image appears to have been created OK"
+else
+
+         echo "COULD NOT BUILD startup.psv"
+         echo "Try asking for help via pop-forum AT cs.bham.ac.uk"
+         exit 4
+    fi
+fi
+
+echo ""
+echo "Later delete any saved images you don't need"
+echo ""
+
+echo "Finishing LINK_WITHOUT_NEWPOP"
+
+exit 0
